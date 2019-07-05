@@ -1,0 +1,33 @@
+let getBody = document.body;
+
+         let newElement = document.createElement("h1");
+
+         let date = new Date();
+         let currentHour = date.getHours();
+
+         let createTxtMsg;
+          
+
+         if (currentHour >= 4  && currentHour < 10) {
+            createTxtMsg = "Good Mourning";
+         } else if (currentHour >= 10  && currentHour < 12) {
+            createTxtMsg = "Good day";
+         } else if(currentHour >= 12 && currentHour < 18) {
+            createTxtMsg = "Good Afternoon";
+         } else if(currentHour >= 18  && currentHour < 22) {
+            createTxtMsg = "Good evening";
+         } else if(currentHour >= 22  && currentHour < 4) {
+            createTxtMsg = "Good Night";
+         } else  {
+            createTxtMsg = "Are u from different planet :) ";
+         } 
+         console.log(createTxtMsg);
+
+         let createEleTxt = document.createTextNode(createTxtMsg);
+         newElement.appendChild(createEleTxt);
+
+         getBody.appendChild( newElement);
+
+         newElement.setAttribute("class", "welcome");//grabbed "newelement" and setted it's attribute.
+         
+         newElement.style.cssText = "text-align: center ; font-size: 80px; font-family: Arial";
